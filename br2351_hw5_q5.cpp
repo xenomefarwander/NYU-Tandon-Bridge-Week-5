@@ -69,10 +69,7 @@ void analyzeDivisors(int num, int& outCountDivs, int& outSumDivs){
                 outSumDivs += num / i;
             }
         }
-
-
     }
-
     return;
 }
 
