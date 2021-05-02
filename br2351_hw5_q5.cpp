@@ -5,7 +5,7 @@
  * 2) (with string library) Saves each category of results to a string variable and outputs after looping is finished 
  * (looks nicer, but takes a very long time to output for large numbers)
  * 
- * Algorithm runtime: O(2n)
+ * Algorithm runtime: O(M)  (11.8 calls to analyzeDivisor() for every 10 input)
  */
 
 #include <iostream>
@@ -29,7 +29,7 @@ bool testAmicableNumbers(int num1, int sumDivsNum1);
 int main() {
 
     int i, m;
-    string perfectNumberList, amicableNumberList;
+    // string perfectNumberList, amicableNumberList;
     efficiencyCounter = 0;
 
     cout << "Please enter a positive integer <=2: ";
@@ -37,20 +37,20 @@ int main() {
 
     for (i = 2; i <= m; i += 1){
         if (isPerfect(i)) {
-//            perfectNumberList += to_string(i) + "\n";
+           // perfectNumberList += to_string(i) + "\n";
               cout << i << " is a perfect number" << endl;
         }
         else if (i > sumDivs || sumDivs > m){
             continue;
         }
         else if (testAmicableNumbers(i, sumDivs)){
-//            amicableNumberList += "(" + to_string(i) + ", " + to_string(sumDivs) + ")\n";
+           // amicableNumberList += "(" + to_string(i) + ", " + to_string(sumDivs) + ")\n";
               cout << "(" << i << ", " << sumDivs << ") are amicable numbers" << endl;
         }
     }
 
-//    cout << "Perfect numbers 1 to " << m << ":\n" << perfectNumberList << endl;
-//    cout << "Amicable numbers 1 to " << m << ":\n" << amicableNumberList << endl;
+   // cout << "Perfect numbers 1 to " << m << ":\n" << perfectNumberList << endl;
+   // cout << "Amicable numbers 1 to " << m << ":\n" << amicableNumberList << endl;
 
     cout << "Efficiency counter: " << efficiencyCounter << endl;
     cout << "Input value of m: " << m << endl;
