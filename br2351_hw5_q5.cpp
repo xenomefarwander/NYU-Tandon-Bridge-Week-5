@@ -23,8 +23,7 @@ bool isPerfect(int num);
 /* Takes an integer and returns true when the integer is a perfect number */
 
 bool testAmicableNumbers(int num1, int sumDivsNum1);
-/* Takes two non-perfect integers and returns true when the two numbers are amicable numbers 
- * AND num1 is less than sumDivsNum1 (to avoid finding the same pair twice when looping) */
+/* Takes two non-perfect integers and returns true when the two numbers are amicable numbers */
 
 
 int main() {
