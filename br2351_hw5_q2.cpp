@@ -36,16 +36,19 @@ void printShiftedTriangle(int n, int m, char symbol){
     int centerAlign;
     int lineTotalChars;
 
-    for(lineCount = 1; lineCount <= n; lineCount +=1) {
+    for(lineCount = 1; lineCount <= n; lineCount +=1) { 
+        // First for loop prints to triangle's left margin (num of min spaces for all lines in given triangle)
         for(spaceCount = 1; spaceCount <= m; spaceCount += 1){
             cout << " ";
         }
 
+        // Second for loop prints the remaining spaces specific to each line
         centerAlign = n - lineCount;
         for (spaceCount = 1; spaceCount <= centerAlign; spaceCount +=1){
             cout << " ";
         }
 
+        // Third for loop prints the appropriate num of symbols to the screen
         lineTotalChars = (2 * lineCount) -1;
         for (charCount = 1; charCount <= lineTotalChars; charCount +=1){
             cout << symbol;
@@ -58,9 +61,6 @@ void printShiftedTriangle(int n, int m, char symbol){
 
 void printPineTree(int n, char symbol){
     // Prints n number of triangles, calculates number of spaces and lines to print.
-    // Note: currTriangle (a counter) also equals number of chars left of center on last line of current triangle.
-    // The difference between total chars left of center on last line of last triangle and total chars left of center in
-    // last line of curr triangle tells us how many spaces to print to left for each triangle to ensure alignment
 
     int currTriangle; // num input by user
     int numOfLinesToPrint; // initialize at 2 and increment by 1 every iteration
