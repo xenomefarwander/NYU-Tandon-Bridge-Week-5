@@ -1,32 +1,16 @@
-/*Question 5:
-Consider the following definitions:
-a. A proper divisor of a positive integer (≥ 2) is any of its divisors excluding the number itself.
-For example, the proper divisors of 10 are: 1, 2 and 5.
-b. A perfect number is a positive integer (≥ 2) that is equal to the sum of its proper divisors.
-For example, 6 and 28 are perfect numbers, since:
-6 = 1 + 2 + 3
-28 = 1 + 2 + 4 + 7 + 14
-Background of perfect numbers: https://en.wikipedia.org/wiki/Perfect_number
-c. Amicable numbers are two different positive integer (≥ 2), so related that the sum of the
-proper divisors of each is equal to the other number.
-For example, 220 and 284 are amicable numbers, since:
-284 = 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110
-220 = 1 + 2 + 4 + 71 + 142
-Background of amicable numbers: https://en.wikipedia.org/wiki/Amicable_numbers
-
-Write a function:
-void analyzeDivisors(int num, int& outCountDivs, int& outSumDivs)
-The function takes as an input a positive integer num (≥ 2), and updates two output
-parameters with the number of num's proper divisors and their sum.
-For example, if this function is called with num=12, since 1, 2, 3, 4 and 6 are 12s proper
-divisors, the function would update the output parameters with the numbers 5 and 16.
-Note: Pay attention to the running time of your function. An efficient implementation would
-run in Θ"√𝑛𝑢𝑚'.
+/* Question 5:
+ * Takes an input n and searches for perfect numbers and amicable numbers across the range [2, n].
+ * Two possible implementations: 
+ * 1) (without string library) Prints numbers to screen as soon as they are found (good for very large numbers)
+ * 2) (with string library) Saves each category of results to a string variable and outputs after looping is finished 
+ * (looks nicer, but takes a very long time to output for large numbers)
+ * 
+ * Algorithm runtime: O(2n)
  */
 
 #include <iostream>
 #include <cmath>
-#include <string>
+// #include <string>
 using namespace std;
 
 int efficiencyCounter; // tracks number of calls to analyzeDivisors() across all functions
@@ -93,15 +77,11 @@ void analyzeDivisors(int num, int& outCountDivs, int& outSumDivs){
 }
 
 bool isPerfect(int num){
-    // 1) if i = 220, then sumDivs will be 284
-    // 2) take sumDivs for 220 (equal to 284); perform analyzeDivisors on sumDivs
-    // 3) compare analyzeDivisors(sumDivs, , ) to  i... if analyzeDivisor(sumDivs) = i then
-    // amicableNumbers prints the pair to the screen
 
     int countDivs;
 
+    sumDivs = 0; // declared in global variables so that main() can access and call function testAmicableNumbers()
     countDivs = 0;
-    sumDivs = 0;
     analyzeDivisors(num, countDivs, sumDivs);
     efficiencyCounter += 1;
 
