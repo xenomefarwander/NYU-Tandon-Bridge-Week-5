@@ -101,7 +101,7 @@ bool testAmicableNumbers(int num1, int sumDivsNum1){
     analyzeDivisors(sumDivsNum1, countDivsNum2, sumDivsNum2);
     efficiencyCounter += 1;
 
-    if (num1 == sumDivsNum2 && num1 < sumDivsNum1) {
+    if (num1 == sumDivsNum2) {
         return true;
     }
     else
