@@ -41,7 +41,7 @@ int main() {
 //            perfectNumberList += to_string(i) + "\n";
               cout << i << " is a perfect number" << endl;
         }
-        else if (i > sumDivs){
+        else if (i > sumDivs || sumDivs > m){
             continue;
         }
         else if (testAmicableNumbers(i, sumDivs)){
