@@ -20,19 +20,18 @@ double eApprox(int n);
 
 int main() {
 
-//    int inputInt;
-
     int n;
 
-//    cout.precision(100);
-//    for (int n = 1; n <= 20; n++) {
+    /* Uncomment lines below to test and track precision */
+//    cout.precision(30);
+//    for (int n = 1; n <= 15; n++) {
 //        cout << "n = " << n << '\t' << eApprox(n) << endl;
 //    }
 
     cout << "Please enter a positive integer n: " << endl;
     cin >> n;
 
-    cout << "Value of e (approximated by partial sum to nth term of infinite sum):" << endl;
+    cout << "Value of e (approximated by calculating partial sum of the first " << (n+1) << " terms in infinite sum):" << endl;
     cout << eApprox(n) << endl;
 
     return 0;
@@ -53,4 +52,3 @@ double eApprox (int n){
 
     return eSum;
 }
-
